@@ -9,5 +9,5 @@ select ename,empno,sal,grade from emp join salgrade on sal >= losal and sal<= hi
 --this is also another code according to ANSI standard
 select ename,empno,sal,grade from emp join salgrade on sal between losal and hisal;
 
---this is right join
+--this is left join, dept table will be fully there, coz it is in the left size in the query and it is a left join query
 select ename,empno,emp.deptno,dept.deptno,dname from emp,dept where emp.deptno(+)=dept.deptno;
