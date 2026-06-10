@@ -2,3 +2,9 @@ select ename,empno,sal,grade from emp,salgrade where sal between losal and hisal
 
 -- this can also be used
 select ename,empno,sal,grade from emp,salgrade where sal >= losal and sal<= hisal;
+
+--this is according to ANSI standard
+select ename,empno,sal,grade from emp join salgrade on sal >= losal and sal<= hisal;
+
+--this is also another code according to ANSI standard
+select ename,empno,sal,grade from emp join salgrade on sal between losal and hisal;
