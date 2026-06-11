@@ -26,5 +26,9 @@ select ename,empno,emp.deptno,dept.deptno,dname from emp,dept where emp.deptno(+
 select tab1.ename || ' works for ' || tab2.ename from emp tab1,emp tab2 where tab1.mgr = tab2.empno;
 
 --this code is for cross join, it links all the row from table to all the rows in another table.
---lets say 15 rows in tab1 and 3 rows in tab2, output will be of 30 rows.
+--lets say 15 rows in tab1 and 2 rows in tab2, output will be of 30 rows.
 select * from dept cross join emp;
+
+
+--this code is to copy an entire table.
+ create table dept1 as select * from dept;
