@@ -19,3 +19,5 @@ select ename,empno,emp.deptno,dept.deptno,dname from emp,dept where emp.deptno(+
 --this code is to change(remove or add) the constraint
  alter table emp drop constraint fk_deptno;
 
+--this code is for self join
+select tab1.ename || ' works for ' || tab2.ename from emp tab1,emp tab2 where tab1.mgr = tab2.empno;
