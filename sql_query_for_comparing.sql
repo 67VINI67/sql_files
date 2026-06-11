@@ -19,5 +19,12 @@ select ename,empno,emp.deptno,dept.deptno,dname from emp,dept where emp.deptno(+
 --this code is to change(remove or add) the constraint
  alter table emp drop constraint fk_deptno;
 
---this code is for self join
+
+--this code is for self join, it helps to find the relation inside the table. 
+--for example, using the mgr(manager id) of a person, we can relate it to empno(emp id) of another person to find the manager of an employee.
+--this all happens inside the table itself.
 select tab1.ename || ' works for ' || tab2.ename from emp tab1,emp tab2 where tab1.mgr = tab2.empno;
+
+--this code is for cross join, it links all the row from table to all the rows in another table.
+--lets say 15 rows in tab1 and 3 rows in tab2, output will be of 30 rows.
+select * from dept cross join emp;
